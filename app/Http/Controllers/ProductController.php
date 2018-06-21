@@ -26,6 +26,7 @@ class ProductController extends Controller
         $cart->add($product, $product->id);
 
         $request->session()->put('cart', $cart);
+
         return redirect()->route('product.index');
     	
     }
@@ -63,7 +64,9 @@ class ProductController extends Controller
             return view('shop.shopping-cart', ['products' => null]);
         }
         $oldCart = Session::get('cart');
+        dd($oldCart);
         $cart = new Cart($oldCart);
+        dd($cart);
         return view('shop.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 

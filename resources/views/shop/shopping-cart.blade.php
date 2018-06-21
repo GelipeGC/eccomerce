@@ -27,8 +27,16 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+			<div class="col-sm-4 col-md-4 ">
 				<a href="{{ route('checkout')}}" type="button" class="btn btn-success">Checkout</a>
+			</div>
+			<!--button for payment paypal-->
+			<div class="col-sm-4 col-md-4 ">
+				<a href="{{ route('payment') }}" class='btn-info btn'>PayPal</a>
+			</div>
+			<div class="col-sm-4 col-md-4 ">
+				<a href="{{ route('paypal.express-checkout', ['recurring' => true]) }}" class='btn-info btn'>PayPal</a>
+
 			</div>
 		</div>
 	@else

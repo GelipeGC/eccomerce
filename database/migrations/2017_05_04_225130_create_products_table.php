@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->integer('price');
+            $table->string('payment_status')->nullable();
+            $table->string('recurring_id')->nullable();
             $table->timestamps();
         });
     }
